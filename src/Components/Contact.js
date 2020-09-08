@@ -1,103 +1,107 @@
-import React, { useState } from 'react';
+import React from "react";
 
 const Contact = ({ data }) => {
-   // const [url, setUrl] = useState('mailto:test@example.com?subject=subject&body=body');
-   const [name, setName] = useState('');
-   const [subject, setSubject] = useState('');
-   const [email, setEmail] = useState('');
-   const [message, setMessage] = useState('');
+  console.log(data);
 
-   console.log(data)
-
-    const handleClick = (e) => {
-       e.preventDefault();
-      window.open(`mailto:${email}?subject=${subject}&body=${name}: ${message}`);
-    }
-    
-
-    return (
-      <section id="contact">
-
-         <div className="row section-head">
-
-            <div className="two columns header-col">
-
-               <h1><span>Get In Touch.</span></h1>
-
-            </div>
-
-            <div className="ten columns">
-
-                  <p className="lead">{data?.message}</p>
-
-            </div>
-
-         </div>
-
-         <div className="row">
-            <div className="eight columns">
-
-               <form id="contactForm" name="contactForm" action="/contact" method="post">
-
-               <input type="hidden" name="form-name" value="contactForm"/>
-
-					<fieldset>
-
-                  <div>
-						   <label htmlFor="contactName">Name <span className="required">*</span></label>
-						   <input value={name} type="text" defaultValue="" size="35" id="contactName" name="contactName" onChange={e => setName(e.target.value)}/>
-                  </div>
-
-                  <div>
-						   <label htmlFor="contactEmail">Email <span className="required">*</span></label>
-						   <input value={email} type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail" onChange={e=> setEmail(e.target.value)}/>
-                  </div>
-
-                  <div>
-						   <label htmlFor="contactSubject">Subject</label>
-						   <input value={subject} type="text" defaultValue="" size="35" id="contactSubject" name="contactSubject" onChange={e => setSubject(e.target.value)}/>
-                  </div>
-
-                  <div>
-                     <label htmlFor="contactMessage">Message <span className="required">*</span></label>
-                     <textarea value={message} onChange={e => setMessage(e.target.value)} cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-                  </div>
-
-                  <div>
-                     <button type='submit' onClick={handleClick} className="submit">Submit</button>
-                     <span id="image-loader">
-                        <img alt="" src="images/loader.gif" />
-                     </span>
-                  </div>
-					</fieldset>
-				   </form>
-
-           <div id="message-warning"> Error boy</div>
-				   <div id="message-success">
-                  <i className="fa fa-check"></i>Your message was sent, thank you!<br />
-				   </div>
-           </div>
-
-
-            <aside className="four columns footer-widgets">
-               <div className="widget widget_contact">
-
-					   <h4>Address and Phone</h4>
-					   <p className="address">
-						   {data?.name}<br />
-						   {data?.address.street} <br />
-						   {data?.address.city}, {data?.address.state} {data?.address.zip}<br />
-						   <span>{data?.phone}</span>
-					   </p>
-				   </div>
-
-               <div className="widget widget_tweets">
-
-		         </div>
-            </aside>
+  return (
+    <section id="contact">
+      <div className="row section-head">
+        <div className="two columns header-col">
+          <h1>
+            <span>Get In Touch.</span>
+          </h1>
+        </div>
+        <div className="ten columns">
+          <p className="lead">{data?.message}</p>
+        </div>
       </div>
-   </section>
-    );
-}
+      <div className="row">
+        <div className="eight columns">
+          <form id="contactForm" name="contact" action="/contact" method="post">
+            <input type="hidden" name="form-name" value="contact" />
+            <fieldset>
+              <div>
+                <label htmlFor="name">
+                  Name <span className="required">*</span>
+                </label>
+                <input
+                  required
+                  type="text"
+                  defaultValue=""
+                  size="35"
+                  id="name"
+                  name="name"
+                />
+              </div>
+              <div>
+                <label htmlFor="email">
+                  Email <span className="required">*</span>
+                </label>
+                <input
+                  required
+                  type="text"
+                  defaultValue=""
+                  size="35"
+                  id="email"
+                  name="email"
+                />
+              </div>
+              <div>
+                <label htmlFor="subject">Subject</label>
+                <input
+                  required
+                  type="text"
+                  defaultValue=""
+                  size="35"
+                  id="subject"
+                  name="subject"
+                />
+              </div>
+              <div>
+                <label htmlFor="message">
+                  Message <span className="required">*</span>
+                </label>
+                <textarea
+                  required
+                  cols="30"
+                  rows="10"
+                  id="message"
+                  name="message"
+                ></textarea>
+              </div>
+              <div>
+                <button type="submit" className="submit">
+                  Submit
+                </button>
+              </div>
+            </fieldset>
+          </form>
+
+          <div id="message-warning"> Error boy</div>
+          <div id="message-success">
+            <i className="fa fa-check"></i>Your message was sent, thank you!
+            <br />
+          </div>
+        </div>
+
+        <aside className="four columns footer-widgets">
+          <div className="widget widget_contact">
+            <h4>Address and Phone</h4>
+            <p className="address">
+              {data?.name}
+              <br />
+              {data?.address.street} <br />
+              {data?.address.city}, {data?.address.state} {data?.address.zip}
+              <br />
+              <span>{data?.phone}</span>
+            </p>
+          </div>
+
+          <div className="widget widget_tweets"></div>
+        </aside>
+      </div>
+    </section>
+  );
+};
 
 export default Contact;
