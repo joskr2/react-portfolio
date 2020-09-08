@@ -15,6 +15,32 @@
   </head>
 
   <body>
+
+
+    <form  name="contactForm" netlify netlify-honeypot="bot-field" hidden>
+      <fieldset>
+              <div>
+           <label htmlFor="contactName">Name <span className="required">*</span></label>
+           <input type="text" name="contactName" />
+              </div>
+
+              <div>
+           <label htmlFor="contactEmail">Email <span className="required">*</span></label>
+           <input  type="text"name="contactEmail" />
+              </div>
+
+              <div>
+           <label htmlFor="contactSubject">Subject</label>
+           <input  type="text"  name="contactSubject" />
+              </div>
+
+              <div>
+                 <label htmlFor="contactMessage">Message <span className="required">*</span></label>
+                 <textarea  name="contactMessage"></textarea>
+              </div>
+      </fieldset>
+       </form>
+
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>

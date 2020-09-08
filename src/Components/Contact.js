@@ -37,7 +37,10 @@ const Contact = ({ data }) => {
          <div className="row">
             <div className="eight columns">
 
-               <form id="contactForm" name="contactForm">
+               <form id="contactForm" name="contactForm" action="/contact" method="post">
+
+               <input type="hidden" name="form-name" value="contactForm"/>
+
 					<fieldset>
 
                   <div>
