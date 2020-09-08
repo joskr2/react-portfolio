@@ -15,7 +15,7 @@
       "zip": "04013"
     },
     "website": "",
-    "resumedownload": "",
+    "resumedownload": "https://drive.google.com/file/d/1SNUGjujlN-3s-ygEUoB4LF_5EHhWVH-n/view",
     "social": [
       {
         "name": "facebook",
@@ -26,11 +26,6 @@
         "name": "linkedin",
         "url": "https://www.linkedin.com/in/josue-retamozo-vargas-835764192/",
         "className": "fa fa-linkedin"
-      },
-      {
-        "name": "instagram",
-        "url": "",
-        "className": "fa fa-instagram"
       },
       {
         "name": "github",
