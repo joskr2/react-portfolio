@@ -96,6 +96,12 @@
   "portfolio": {
     "projects": [
       {
+        "title": "Store based on amazon UI",
+        "category": "Ecommerce build inspired in AmazonUI",
+        "image": "store.png",
+        "url": "https://store-f2b11.web.app/"
+      },
+      {
         "title": "Firebase WhatsApp Clone",
         "category": "WhatsApp Clone built with ReactJS and Firebase",
         "image": "whatsapp-mern.jpeg",
